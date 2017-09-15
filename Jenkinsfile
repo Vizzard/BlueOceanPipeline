@@ -34,17 +34,20 @@ pipeline {
       }
     }
   }
+  environment {
+    READY_TO_DEPLOY = 'no'
+  }
   post {
     always {
       echo 'I have finished'
+      
     }
+    
     success {
       echo 'I succeeded!'
+      
     }
-  }
-  environment {
-    MyEnv = 'hello'
-    READY_TO_DEPLOY = 'yes'
+    
   }
   options {
     timestamps()
