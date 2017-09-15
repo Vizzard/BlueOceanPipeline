@@ -36,6 +36,7 @@ pipeline {
   }
   environment {
     MyEnv = 'hello'
+    READY_TO_DEPLOY = 'yes'
   }
   options {
     timestamps()
