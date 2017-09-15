@@ -26,6 +26,9 @@ pipeline {
       }
     }
     stage('Deploy') {
+      when {
+        environment name: 'READY_TO_DEPLOY', value: 'yes'
+      }
       steps {
         echo 'Deploy'
       }
