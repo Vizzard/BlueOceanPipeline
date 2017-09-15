@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Show me my Build Step'
+        timeout(time: 10, unit: 'MINUTES') {
+          sh 'echo \'long running build\''
+        }
+        
       }
     }
     stage('Unit Test') {
