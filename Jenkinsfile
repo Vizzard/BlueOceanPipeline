@@ -34,6 +34,14 @@ pipeline {
       }
     }
   }
+  post {
+    always {
+      echo 'I have finished'
+    }
+    success {
+      echo 'I succeeded!'
+    }
+  }
   environment {
     MyEnv = 'hello'
     READY_TO_DEPLOY = 'yes'
