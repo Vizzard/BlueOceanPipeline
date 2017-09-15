@@ -4,7 +4,6 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Build Step'
-        timestamps()
       }
     }
     stage('Unit Test') {
