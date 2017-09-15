@@ -30,7 +30,7 @@ pipeline {
         environment name: 'READY_TO_DEPLOY', value: 'yes'
       }
       steps {
-        echo 'Deploy'
+        echo 'My Deploy'
       }
     }
   }
