@@ -1,15 +1,9 @@
 pipeline {
   agent any
-  
- // using the Timestamper plugin we can add timestamps to the console log
- options {
-   timestamps()
- }
-
   stages {
     stage('Build') {
       steps {
-        echo 'Build Step'
+        echo 'Show me my Build Step'
       }
     }
     stage('Unit Test') {
@@ -36,5 +30,8 @@ pipeline {
   }
   environment {
     MyEnv = 'hello'
+  }
+  options {
+    timestamps()
   }
 }
