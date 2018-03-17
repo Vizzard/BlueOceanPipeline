@@ -11,20 +11,28 @@ pipeline {
         stage('test_1') {
           steps {
             node(label: 'test') {
+              echo "test 1 runs ..."
               sleep 10
-              writeFile(file: 'report.txt', text: 'test successful')
-            }
-            
+              echo "... test 1 done"
+            }            
           }
         }
         stage('test_2') {
           steps {
-            sleep 10
+            node(label: 'test') {
+              echo "test 2 runs ..."
+              sleep 10
+              echo "... test 2 done"
+            }
           }
         }
         stage('test_3') {
           steps {
-            sleep 10
+            node(label: 'test') {
+              echo "test 3 runs ..."
+              sleep 10
+              echo "... test 3 done"
+            }
           }
         }
       }
