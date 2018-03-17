@@ -6,24 +6,28 @@ pipeline {
         echo 'Build'
       }
     }
-    stage('test') {
+    stage('Test') {
       parallel {
-        stage('test') {
+        stage('test_1') {
           steps {
-            echo 'test'
+            sleep 10
           }
         }
         stage('test_2') {
           steps {
-            echo 'test 2'
+            sleep 10
           }
         }
         stage('test_3') {
           steps {
-            echo 'test_3'
             sleep 10
           }
         }
+      }
+    }
+    stage('Report') {
+      steps {
+        echo 'report'
       }
     }
   }
