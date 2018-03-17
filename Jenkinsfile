@@ -1,4 +1,2 @@
 pipeline {
-  stages {
-  }
 } 
