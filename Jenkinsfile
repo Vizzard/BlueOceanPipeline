@@ -10,7 +10,11 @@ pipeline {
       parallel {
         stage('test_1') {
           steps {
-            sleep 10
+            node(label: 'test') {
+              sleep 10
+              writeFile(file: 'report.txt', text: 'test successful')
+            }
+            
           }
         }
         stage('test_2') {
